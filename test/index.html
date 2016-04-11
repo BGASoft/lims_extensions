@@ -8,7 +8,11 @@
 	</head>
 	<body>
     <script>
-        limsExtensionTCPPrint("localhost","9000","listing content",function(response) {
+        limsChromeAppTCPPrint("localhost","3000","listing content",function(response) {
+            if(response.status!=undefined && response.status)
+                alert('Print request sent!');
+            else
+                alert('Print request cannot be sent! Communication error to the printer maybe.');
         });
     </script>
 	</body>

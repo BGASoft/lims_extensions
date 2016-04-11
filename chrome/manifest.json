@@ -9,16 +9,17 @@
         "48" : "images/icon-48.png",
         "64" : "images/icon-64.png"
     },
-    "homepage_url": "http://insert_web_site_here.com/",
-    "background": {
-        "page": "background.html"
+    "app": {
+        "background": {
+          "scripts": ["js/init-lims.js"]
+        }
     },
-    "permissions": [
-        "http://*.limsabc.com/*"
-    ],
-    "browser_action": {
-        "default_icon": "images/icon-64.png",
-        "default_title": "limsABC connector",
-        "default_popup": "popup.html"
+    "externally_connectable": {
+      "matches": ["*://localhost/*","*://lims-local-dev.com/*"]
+    },
+    "sockets": {
+        "tcp": {
+            "connect": "*:*"
+        }
     }
 }
